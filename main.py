@@ -1,20 +1,31 @@
 from turtle import Turtle, Screen
 import random
 
+screen = Screen()
+screen.colormode(255)
 tim = Turtle()
 tim.shape("arrow")
 
-colors = ["DarkCyan", "coral3", "CadetBlue4", "LawnGreen", "OliveDrab3", "pink2", "tan1"]
 
-def draw_shape(num_sides):
-    angle = 360 / num_sides
-    for i in range(num_sides):
-        tim.forward(100)
-        tim.right(angle)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color = (r, g, b)
+    return color
 
-for shape_side_n in range(3, 11):
-    tim.color(random.choice(colors))
-    draw_shape(shape_side_n)
 
-screen = Screen()
+# Make a Spirograph
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        tim.color(random_color())
+        tim.circle(50)
+        tim.setheading(tim.heading() + size_of_gap)
+
+
+# tim.pensize(6)
+tim.speed("fastest")
+draw_spirograph(5)
+
+
 screen.exitonclick()
