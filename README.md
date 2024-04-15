@@ -1,4 +1,4 @@
-# Turtle Dot Painting Generator
+# Create Hirst-Style Dot Paintings with Python Turtle
 
 This repository contains a Python script that utilizes the `turtle` graphics module to generate a colorful dot painting in the style of Damien Hirst's famous dot artworks. The script relies on a pre-defined list of colors and arranges these colors into a grid of dots, creating a visually appealing pattern.
 
